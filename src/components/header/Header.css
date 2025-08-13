@@ -1,0 +1,120 @@
+header {
+  padding-top: 7rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__container {
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5rem;
+  flex: 1;
+}
+
+/* CTA buttons */
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* Social Media Icons */
+.header__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: -4rem; /* Adjust this if needed */
+  top: 35%; /* Uplifted the icons */
+  transform: translateY(-50%);
+}
+
+.header__socials::after {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
+}
+
+/* Profile image section */
+.me {
+  background: linear-gradient(#48b6ff88, transparent);
+  width: 20rem;
+  border-radius: 1rem 0 0 1rem;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.me img {
+  height: 100%;
+  filter: brightness(95%);
+}
+.cta a:hover {
+  transform: translateY(-2px);
+}
+
+/* Scroll Down */
+.scroll__down {
+  position: absolute;
+  bottom: 0;
+  left: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite;
+}
+
+.scroll__down:hover {
+  transform: translateY(4px);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+/* Medium Devices */
+@media screen and (max-width: 1024px) {
+  header {
+    flex-direction: column;
+  }
+
+  .header__container {
+    margin: 0;
+  }
+
+  .header__socials {
+    left: 1rem;
+    top: 40%;
+  }
+
+  .scroll__down {
+    bottom: -28rem;
+  }
+
+  .me {
+    border-radius: 10rem 10rem 1rem 1rem;
+    margin-top: 2rem;
+  }
+}
+
+/* Small Devices */
+@media screen and (max-width: 800px) {
+  .header__socials,
+  .scroll__down {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .me {
+    width: 15rem;
+  }
+}

@@ -1,0 +1,129 @@
+.about__container {
+  display: flex;
+  color: rgb(205, 205, 205);
+  gap: 2rem;
+  align-items: center;
+}
+
+.about__container > div:first-child {
+  flex: 1;
+  position: relative;
+}
+
+.avatar-img {
+  filter: brightness(95%);
+  border-radius: 1rem;
+  transition: transform 0.4s ease;
+}
+
+
+/* Floating Tech Icons */
+.tech-icon {
+  position: absolute;
+  width: 40px;
+  opacity: 0.7;
+  animation: float 4s ease-in-out infinite;
+}
+
+.tech-icon.html {
+  top: -20px;
+  left: 20%;
+}
+.tech-icon.js {
+  bottom: -20px;
+  left: 0;
+}
+.tech-icon.react {
+  top: 10%;
+  right: -25px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.about__container > div:last-child {
+  flex: 2;
+  line-height: 1.7;
+}
+
+.about__content {
+  box-sizing: border-box;
+  padding: 3rem;
+}
+
+.intro-label {
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.about-heading {
+  color: #00aaff;
+  font-size: 1.2rem;
+  /* font-weight: bold; */
+  -webkit-background-clip: text;
+}
+
+.highlight {
+  position: relative;
+  font-weight: bold;
+  color: #fff;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 4px;
+  /* background: linear-gradient(90deg, #00aaff, #ff00cc); */
+  /* border-radius: 2px; */
+  /* transform: scaleX(0); */
+  /* transform-origin: left; */
+  /* transition: transform 0.4s ease; */
+}
+
+.highlight:hover::after {
+  transform: scaleX(1);
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media screen and (max-width: 991px) {
+  .about__content {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about__container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about__container > div:first-child img {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .about__content {
+    margin-top: 2rem;
+    padding: 0;
+  }
+  .tech-icon {
+    display: none;
+  }
+}
